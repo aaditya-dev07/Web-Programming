@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Portal</title>
+<style>
+body {
+    background-color: skyblue;
+    font-family: Arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+.nav a {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.section {
+    background-color: darkblue;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+}
+
+input {
+    margin: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<h1>Student Registration Portal</h1>
+
+<div class="nav">
+<a href="#p">Personal</a>
+<a href="#a">Academic</a>
+<a href="#ad">Address</a>
+<a href="#ac">Account</a>
+</div>
+
+<form onsubmit="alert('Form Submitted Successfully')">
+
+<div id="p" class="section">
+<h3>Personal Information</h3>
+<input type="text" placeholder="Full Name"><br>
+<input type="date"><br>
+<input type="email" placeholder="Email"><br>
+</div>
+
+<div id="a" class="section">
+<h3>Academic Details</h3>
+<input type="text" placeholder="Register Number"><br>
+<input type="text" placeholder="Department"><br>
+</div>
+
+<div id="ad" class="section">
+<h3>Address</h3>
+<input type="text" placeholder="City"><br>
+<input type="text" placeholder="State"><br>
+</div>
+
+<div id="ac" class="section">
+<h3>Account</h3>
+<input type="text" placeholder="Username"><br>
+<input type="password" placeholder="Password"><br>
+<input type="submit">
+</div>
+
+</form>
+
+</body>
+</html>
