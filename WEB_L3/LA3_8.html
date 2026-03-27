@@ -1,12 +1,33 @@
-<html><body>
+<html>
+<body>
+
 <h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
-<input id="n"><button onclick="run()">Run</button>
+
+<input id="num" placeholder="Enter number">
+<button onclick="run()">Run</button>
+
 <p id="o"></p>
+
 <script>
-function run(){
-var n=parseInt(n.value),i=1,s="";
-do{s+=n+"x"+i+"="+(n*i)+"<br>";i++;}while(i<=10);
-o.innerHTML=s;
+function run() {
+    var num = parseInt(document.getElementById("num").value);
+
+    if (isNaN(num)) {
+        alert("Please enter a valid number");
+        return;
+    }
+
+    var i = 1;
+    var s = "";
+
+    do {
+        s += num + " x " + i + " = " + (num * i) + "<br>";
+        i++;
+    } while (i <= 10);
+
+    document.getElementById("o").innerHTML = s;
 }
 </script>
-</body></html>
+
+</body>
+</html>
