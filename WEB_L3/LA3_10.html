@@ -1,0 +1,15 @@
+<html><body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<input type="checkbox" name="s" value="A">A
+<input type="checkbox" name="s" value="B">B
+<input type="checkbox" name="s" value="C">C
+<button onclick="show()">Show</button>
+<p id="o"></p>
+<script>
+function show(){
+var x=document.getElementsByName("s"),arr=[];
+for(var i=0;i<x.length;i++) if(x[i].checked) arr.push(x[i].value);
+o.innerHTML=arr.join(",");
+}
+</script>
+</body></html>

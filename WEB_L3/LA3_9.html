@@ -1,0 +1,14 @@
+<html><body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<input type="radio" name="c" value="Red">Red
+<input type="radio" name="c" value="Green">Green
+<input type="radio" name="c" value="Blue">Blue
+<button onclick="show()">Show</button>
+<p id="o"></p>
+<script>
+function show(){
+var x=document.getElementsByName("c");
+for(var i=0;i<x.length;i++) if(x[i].checked) o.innerHTML=x[i].value;
+}
+</script>
+</body></html>

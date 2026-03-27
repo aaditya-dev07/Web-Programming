@@ -1,0 +1,13 @@
+<html><body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<input id="n" placeholder="Name">
+<button onclick="add()">Add</button>
+<table id="t"></table>
+<script>
+function add(){
+var n=document.getElementById("n").value;
+var row="<tr><td>"+n+"</td></tr>";
+document.getElementById("t").innerHTML+=row;
+}
+</script>
+</body></html>

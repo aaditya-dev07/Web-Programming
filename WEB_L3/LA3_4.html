@@ -1,0 +1,14 @@
+<html><body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<input id="l" placeholder="Length">
+<input id="b" placeholder="Breadth">
+<button onclick="calc()">Calc</button>
+<p id="res"></p>
+<script>
+function calc(){
+var l=parseFloat(document.getElementById("l").value);
+var b=parseFloat(document.getElementById("b").value);
+document.getElementById("res").innerHTML="Area="+(l*b);
+}
+</script>
+</body></html>

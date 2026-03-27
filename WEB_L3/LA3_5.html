@@ -1,0 +1,16 @@
+<html><body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<input id="a"><input id="b">
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+<p id="r"></p>
+<script>
+function calc(op){
+var x=parseFloat(a.value),y=parseFloat(b.value),res;
+switch(op){case '+':res=x+y;break;case '-':res=x-y;break;case '*':res=x*y;break;case '/':res=y?x/y:"Err";}
+r.innerHTML=res;
+}
+</script>
+</body></html>

@@ -1,0 +1,18 @@
+<html>
+<body>
+<h2>Name: Aaditya Timilsina | Reg No: 24BCE2967</h2>
+<form>
+<input id="f" placeholder="First">
+<input id="l" placeholder="Last">
+<button type="button" onclick="gen()">Generate</button>
+</form>
+<p id="out"></p>
+<script>
+function gen(){
+var f=document.getElementById("f").value;
+var l=document.getElementById("l").value;
+document.getElementById("out").innerHTML=f+"."+l+"@park.edu";
+}
+</script>
+</body>
+</html>
