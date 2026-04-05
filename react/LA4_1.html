@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>React App</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    input, button { margin: 5px; padding: 6px; }
+    .grid { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card { border: 1px solid #ccc; padding: 8px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+function Welcome(props) {
+  return (
+    <div className="container">
+      <h1>React Lab - Aaditya Timilsina (24BCE2967)</h1>
+      <h2>Hello {props.name} from {props.city}</h2>
+      <p>This is a personalized welcome message using props and functional components.</p>
+    </div>
+  );
+}
+function App() {
+  return <Welcome name="Aaditya Timilsina" city="Vellore" />;
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+  </script>
+</body>
+</html>

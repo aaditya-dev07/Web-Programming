@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px;
+    }
+    .box {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+function App() {
+
+  const [city, setCity] = React.useState("");
+  const [data, setData] = React.useState(null);
+
+  const fetchData = () => {
+    if(city === "") {
+      alert("Enter city name");
+      return;
+    }
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=78d36dd1ac6dd60b4fe72ab1a23366e2&units=metric`)
+      .then(res => res.json())
+      .then(d => {
+        console.log(d);
+        setData(d);
+      });
+  };
+
+  return (
+    <div>
+      <h1>React Lab - Aaditya Timilsina (24BCE2967)</h1>
+      <h2>Weather App</h2>
+
+      <input 
+        placeholder="Enter city"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+
+      <button onClick={fetchData}>Search</button>
+
+      {data && data.main && (
+        <div className="box">
+          <h3>{data.name}</h3>
+          <p>Temperature: {data.main.temp} °C</p>
+          <p>{data.weather[0].description}</p>
+          <p>Humidity: {data.main.humidity}</p>
+          <p>Wind Speed: {data.wind.speed}</p>
+        </div>
+      )}
+
+      {data && data.cod === "404" && (
+        <p style={{color: "red"}}>City not found</p>
+      )}
+
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>React App</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    input, button { margin: 5px; padding: 6px; }
+    .grid { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card { border: 1px solid #ccc; padding: 8px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+function App() {
+  const [m1, setM1] = React.useState("");
+  const [m2, setM2] = React.useState("");
+  const [m3, setM3] = React.useState("");
+  const [grade, setGrade] = React.useState("");
+
+  const calc = () => {
+    const avg = (Number(m1) + Number(m2) + Number(m3)) / 3;
+    if (avg >= 90) setGrade("A");
+    else if (avg >= 75) setGrade("B");
+    else if (avg >= 60) setGrade("C");
+    else setGrade("D");
+  };
+
+  return (
+    <div className="container">
+      <h1>React Lab - Aaditya Timilsina (24BCE2967)</h1>
+      <h2>Grade Calculator</h2>
+      <input placeholder="Mark 1" onChange={e => setM1(e.target.value)} />
+      <input placeholder="Mark 2" onChange={e => setM2(e.target.value)} />
+      <input placeholder="Mark 3" onChange={e => setM3(e.target.value)} />
+      <button onClick={calc}>Calculate</button>
+      <h3>Grade: {grade}</h3>
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+  </script>
+</body>
+</html>
